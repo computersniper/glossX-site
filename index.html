@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="GlossX is a local, plugin-native agent workbench for research and learning: an agent that reads papers with you, cites what it finds, and keeps its work in a versioned workspace." />
+    <meta name="theme-color" content="#080b12" />
+    <title>GlossX — An agent that does research with you</title>
+    <link rel="icon" href="/assets/glossx-logo.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <div class="ambient-field" aria-hidden="true">
+        <span class="ambient-grid"></span>
+        <span class="ambient-glow glow-violet"></span>
+        <span class="ambient-glow glow-blue"></span>
+        <span class="ambient-speck speck-one"></span>
+        <span class="ambient-speck speck-two"></span>
+        <span class="ambient-speck speck-three"></span>
+      </div>
+      <header class="nav-wrap">
+        <nav class="nav container" aria-label="Primary navigation">
+          <a class="brand" href="#top" aria-label="GlossX home">
+            <img src="/assets/glossx-logo.svg" alt="" />
+            <span>GlossX</span>
+          </a>
+          <button class="menu-button" aria-expanded="false" aria-controls="nav-links" data-i18n="menu">Menu</button>
+          <div class="nav-links" id="nav-links">
+            <a href="#product" data-i18n="nav.product">Product</a>
+            <a href="#architecture" data-i18n="nav.architecture">Architecture</a>
+            <a href="#results" data-i18n="nav.results">Results</a>
+            <a href="#install" data-i18n="nav.install">Install</a>
+            <a class="nav-github" href="https://github.com/computersniper/glossX" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+          </div>
+          <button class="language-toggle" type="button" aria-label="切换到中文">中文</button>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero container">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="live-dot"></span> <span data-i18n="hero.eyebrow">Local agent workbench for research</span></div>
+            <h1 data-i18n="hero.title">An agent that does research <em>with</em> you.</h1>
+            <p class="hero-lede" data-i18n="hero.lede">GlossX keeps everything Gloss does as a paper reader and adds a full agent harness on top: it reads passage by passage, answers with sources you can click, and leaves its notes and code in a versioned workspace on your own machine.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#install" data-i18n="hero.primary">Get GlossX <span>↓</span></a>
+              <a class="button button-ghost" href="#architecture" data-i18n="hero.secondary">See how it works <span>→</span></a>
+            </div>
+            <div class="hero-proof">
+              <div><strong>100%</strong><span data-i18n="proof.local">on your machine</span></div>
+              <div><strong data-i18n="proof.citeTitle">Cited</strong><span data-i18n="proof.cite">page + quote, every claim</span></div>
+              <div><strong data-i18n="proof.pluginTitle">11 kinds</strong><span data-i18n="proof.plugin">of plugins, one manifest</span></div>
+            </div>
+          </div>
+
+          <div class="session-art" aria-hidden="true">
+            <div class="session-card">
+              <div class="session-bar"><img src="/assets/glossx-logo.svg" alt="" /><b data-i18n="art.title">Compare attention mechanisms</b><span>⎇ main</span></div>
+              <div class="session-user" data-i18n="art.ask">How do sparse and linear attention trade accuracy for speed?</div>
+              <div class="tool-call done"><i>✓</i><code>search_library</code><small data-i18n="art.tool1">4 papers</small></div>
+              <div class="tool-call done"><i>✓</i><code>reader ×3</code><small data-i18n="art.tool2">subagents · in parallel</small></div>
+              <div class="tool-call run"><i></i><code>verify_claims</code><small data-i18n="art.tool3">11 / 14 spans checked</small></div>
+              <div class="session-answer">
+                <span data-i18n="art.answer">Sparse attention keeps exact scores on a chosen subset, so accuracy holds on long-range tasks</span><sup>1</sup>
+                <span data-i18n="art.answer2">while linear kernels trade a small loss for O(n) cost</span><sup>2</sup>
+                <div class="answer-line"></div><div class="answer-line short"></div>
+              </div>
+              <div class="session-cites"><span>¹ longformer.pdf · p.4</span><span>² performer.pdf · p.7</span></div>
+            </div>
+            <div class="art-tag tag-approve"><i></i> <span data-i18n="art.approve">Run python? · Approve</span></div>
+            <div class="art-tag tag-commit">⎇ <span data-i18n="art.commit">committed notes/attention.md</span></div>
+          </div>
+        </section>
+
+        <section class="statement container" id="product">
+          <p class="section-kicker" data-i18n="statement.kicker">The reader, now with an agent</p>
+          <div class="statement-grid">
+            <h2 data-i18n="statement.title">The model decides<br />which tools to <em>call</em>.</h2>
+            <p data-i18n="statement.body">Long-lived sessions where the agent searches your library, reads sections, runs code and asks before anything sensitive. You watch every step as a card, approve what matters, and keep the result.</p>
+          </div>
+        </section>
+
+        <section class="reader-section">
+          <div class="container reader-grid">
+            <div class="reader-frame reveal">
+              <div class="window-bar"><span></span><span></span><span></span><div>GlossX · Research workbench</div><b>Ctrl K</b></div>
+              <img src="/assets/agent-chat-dark.png" alt="GlossX workbench: paper library, PDF reader and an agent session with tool-call cards, citations and a todo list" />
+            </div>
+            <div class="reader-copy">
+              <p class="section-kicker" data-i18n="reader.kicker">Two modes, one app</p>
+              <h2 data-i18n="reader.title">Read like Gloss.<br />Work like an agent.</h2>
+              <p data-i18n="reader.body">Switch at the top left. Gloss is the classic local paper reader; GlossX is the research workbench with library, multi-tab PDF reader, session chat and a workspace that remembers.</p>
+              <ul class="feature-list">
+                <li><span>01</span><div><strong data-i18n="reader.f1">Agent sessions</strong><small data-i18n="reader.f1d">Persistent and concurrent; fork, rename, interrupt, resume.</small></div></li>
+                <li><span>02</span><div><strong data-i18n="reader.f2">Permission modes</strong><small data-i18n="reader.f2d">Ask, Agent, Auto and Plan, with allow / ask / deny rules.</small></div></li>
+                <li><span>03</span><div><strong data-i18n="reader.f3">Answers you can check</strong><small data-i18n="reader.f3d">Every claim points to a file, a page and the quoted passage.</small></div></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="capabilities container" id="capabilities">
+          <div class="section-heading"><div><p class="section-kicker" data-i18n="cap.kicker">What the agent can do</p><h2 data-i18n="cap.title">Built for papers, not just prompts.</h2></div><p data-i18n="cap.lede">Tools, subagents and workflows designed around how research and learning actually happen.</p></div>
+          <div class="capability-grid">
+            <article class="capability cap-hero">
+              <div class="card-icon">✦</div>
+              <h3 data-i18n="cap.c1">Literature review, verified</h3>
+              <p data-i18n="cap.c1d">Plan, search, screen, read with reader subagents, check each claim against the paper span, then write a cited report. Team review adds a critic and a rebuttal round across several papers.</p>
+              <div class="flow-mini">
+                <span data-i18n="flow.plan">plan</span><b>→</b><span data-i18n="flow.read">read ×n</span><b>→</b><span data-i18n="flow.critic">critic</span><b>→</b><span data-i18n="flow.verify">verify</span><b>→</b><span data-i18n="flow.write">cited report</span>
+              </div>
+            </article>
+            <article class="capability"><div class="card-icon">⎇</div><h3 data-i18n="cap.c2">A workspace per paper</h3><p data-i18n="cap.c2d">Every workspace is a git repository. The agent's edits become commits you can diff, branch, merge or revert.</p></article>
+            <article class="capability"><div class="card-icon">◎</div><h3 data-i18n="cap.c3">Learns how you learn</h3><p data-i18n="cap.c3d">A learner model tracks concept mastery, so explanations and self-test questions meet you where you are.</p></article>
+            <article class="capability"><div class="card-icon">⌁</div><h3 data-i18n="cap.c4">A browser it can drive</h3><p data-i18n="cap.c4d">Uses your Edge or Chrome over CDP with a live view and takeover. Downloads and imports ask first.</p></article>
+            <article class="capability"><div class="card-icon">⌘</div><h3 data-i18n="cap.c5">Commands, skills, hooks</h3><p data-i18n="cap.c5d">Slash commands, @-mentions, SKILL.md skills, MCP servers and shell hooks, all as plugins.</p></article>
+          </div>
+        </section>
+
+        <section class="arch" id="architecture">
+          <div class="container">
+            <div class="section-heading"><div><p class="section-kicker" data-i18n="arch.kicker">Architecture</p><h2 data-i18n="arch.title">A small kernel.<br /><em>Everything else</em> is a plugin.</h2></div><p data-i18n="arch.lede">The kernel stays fixed and auditable. Tools, providers, subagents and workflows plug in through one manifest, and third-party output is always treated as untrusted data.</p></div>
+
+            <div class="arch-grid">
+              <div class="arch-stack" role="list">
+                <div class="layer l-workbench" role="listitem"><span class="layer-name" data-i18n="arch.l1">Workbench</span><p data-i18n="arch.l1d">React UI · library · multi-tab PDF reader · session chat · workspace explorer, editor and diff · built-in browser</p></div>
+                <div class="layer l-harness" role="listitem"><span class="layer-name" data-i18n="arch.l2">Harness</span><p data-i18n="arch.l2d">sessions · model-driven tool loop · modes &amp; permissions · context compaction · commands · subagents · skills · hooks · mentions</p></div>
+                <div class="layer l-plugins" role="listitem"><span class="layer-name" data-i18n="arch.l3">Plugins</span><p data-i18n="arch.l3d">manifest v2 → native Python · declarative · Agent Skills · MCP client + server · Claude Code / Codex delegates · SSH · LLM providers</p></div>
+                <div class="layer l-kernel" role="listitem"><span class="layer-name" data-i18n="arch.l4">Kernel</span><p data-i18n="arch.l4d">capability registry · scheduler · permission &amp; sandbox gate · budget meter · trace log</p></div>
+                <div class="layer l-classic" role="listitem"><span class="layer-name" data-i18n="arch.l5">Classic Gloss</span><p data-i18n="arch.l5d">summary · notes · mind map · RAG chat · translate · highlights · references · scholar search</p></div>
+              </div>
+              <aside class="arch-side">
+                <div class="side-block">
+                  <p class="section-kicker" data-i18n="arch.surfaces">Surfaces</p>
+                  <ul>
+                    <li><b data-i18n="arch.s1">Desktop</b><span data-i18n="arch.s1d">Electron app, multiple windows</span></li>
+                    <li><b data-i18n="arch.s2">Browser</b><span data-i18n="arch.s2d">npm / Bun local web app</span></li>
+                    <li><b>CLI</b><span data-i18n="arch.s3d">import, summarize, chat in a terminal</span></li>
+                    <li><b data-i18n="arch.s4">Mobile</b><span data-i18n="arch.s4d">iPad, iPhone, Android, paired to your computer</span></li>
+                  </ul>
+                </div>
+                <div class="side-block">
+                  <p class="section-kicker" data-i18n="arch.models">Models</p>
+                  <div class="chips"><span>Claude Code</span><span>Codex</span><span>Anthropic API</span><span data-i18n="arch.compat">OpenAI-compatible</span></div>
+                </div>
+              </aside>
+            </div>
+
+            <ol class="loop">
+              <li><span>1</span><b data-i18n="loop.1">Ask</b><small data-i18n="loop.1d">question, @paper, /command</small></li>
+              <li><span>2</span><b data-i18n="loop.2">Plan</b><small data-i18n="loop.2d">memory and project notes recalled</small></li>
+              <li><span>3</span><b data-i18n="loop.3">Call tools</b><small data-i18n="loop.3d">library, code, web, subagents</small></li>
+              <li><span>4</span><b data-i18n="loop.4">Gate</b><small data-i18n="loop.4d">permissions, budget, approval</small></li>
+              <li><span>5</span><b data-i18n="loop.5">Answer</b><small data-i18n="loop.5d">claims tied to page + quote</small></li>
+              <li><span>6</span><b data-i18n="loop.6">Commit</b><small data-i18n="loop.6d">workspace saved as a git commit</small></li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="gallery container" aria-label="Screens">
+          <figure class="shot reveal"><img src="/assets/workspace-diff-dark.png" alt="Source control view with a diff of an agent edit and the agent's commit note" loading="lazy" /><figcaption data-i18n="shot.diff">Every agent edit is a commit you can review.</figcaption></figure>
+          <figure class="shot reveal"><img src="/assets/browser-midnight.png" alt="GlossX built-in browser with the agent controlling a page" loading="lazy" /><figcaption data-i18n="shot.browser">The built-in browser, shared between you and the agent.</figcaption></figure>
+        </section>
+
+        <section class="results" id="results">
+          <div class="container">
+            <div class="section-heading"><div><p class="section-kicker" data-i18n="res.kicker">Results</p><h2 data-i18n="res.title">Measured in the open,<br />against <em>other agents</em>.</h2></div><p data-i18n="res.lede">Same base model, same task text, a fresh workspace per run and one scoring script for every system. Citations are checked against the PDF itself.</p></div>
+
+            <div class="method-grid">
+              <article class="method"><small>01</small><h3 data-i18n="res.m1">Benchmarks</h3><p data-i18n="res.m1d">SciFact claim checking, QASPER question answering, and GlossX-Route-100 for workflow routing. PaperArena, ScholarQABench and TutorBench follow.</p></article>
+              <article class="method"><small>02</small><h3 data-i18n="res.m2">Citation support</h3><p data-i18n="res.m2d">A judge model labels each quote SUPPORTS, PARTIAL or UNSUPPORTED. 20% is checked by hand; the rate counts only when κ ≥ 0.6.</p></article>
+              <article class="method"><small>03</small><h3 data-i18n="res.m3">Fault injection</h3><p data-i18n="res.m3d">A prompt-injection page inside a paper, a corrupted PDF, an unreachable model. The right answer is to refuse to make things up.</p></article>
+              <article class="method"><small>04</small><h3 data-i18n="res.m4">Compared with</h3><p data-i18n="res.m4d">Codex and pi on the same model and account, run headless with the same timeout. More agents can join through a command-line adapter.</p></article>
+            </div>
+
+            <div class="results-board">
+              <div class="board-head">
+                <div><b data-i18n="res.board">Pilot results</b><small id="results-meta" data-i18n="res.pending">Not run yet. This table fills in once the pilot is executed.</small></div>
+                <span class="status-pill" id="results-status" data-i18n="res.pill">Pending</span>
+              </div>
+              <div class="table-wrap">
+                <table class="results-table">
+                  <thead><tr><th data-i18n="res.metric">Metric</th><th>GlossX</th><th>Codex</th><th>pi</th></tr></thead>
+                  <tbody id="results-body"></tbody>
+                </table>
+              </div>
+              <p class="board-note" data-i18n="res.note">Pilot: SciFact 30 + QASPER 20, three systems, plus 30 Route-100 seed tasks for GlossX routing. Values show the mean with a 95% bootstrap interval.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="local container" id="everywhere"><div class="local-card">
+          <div>
+            <p class="section-kicker" data-i18n="mobile.kicker">On every screen you read on</p>
+            <h2 data-i18n="mobile.title">Your agent stays home.<br />Take it anywhere.</h2>
+            <div class="local-points">
+              <p><b data-i18n="mobile.p1">Local by default</b> <span data-i18n="mobile.p1d">Papers, notes, workspaces and CLIs stay on your computer.</span></p>
+              <p><b data-i18n="mobile.p2">iPad, iPhone, Android</b> <span data-i18n="mobile.p2d">One app pairs with GlossX over your network with a QR code and shows the same workbench, laid out for touch.</span></p>
+              <p><b data-i18n="mobile.p3">Remote Linux</b> <span data-i18n="mobile.p3d">Run GlossX on a server and reach it through an SSH tunnel.</span></p>
+            </div>
+          </div>
+          <div class="devices" aria-hidden="true">
+            <img class="device-ipad" src="/assets/ipad-agent.png" alt="" loading="lazy" />
+            <img class="device-phone" src="/assets/phone-agent.png" alt="" loading="lazy" />
+          </div>
+        </div></section>
+
+        <section class="install" id="install"><div class="container install-inner"><p class="section-kicker" data-i18n="install.kicker">Start researching differently</p><h2 data-i18n="install.title">Bring a paper.<br /><em>Ask anything.</em></h2><p class="install-intro" data-i18n="install.intro">GlossX is in active development. Grab a preview build or run it from source.</p><div class="download-grid">
+            <a class="download-card featured" href="https://github.com/computersniper/glossX/actions"><span class="platform-icon">⊞</span><div><small data-i18n="install.d1">Windows preview build</small><strong data-i18n="install.d1t">Portable GlossX.exe <b>→</b></strong></div><em data-i18n="install.rec">Preview</em></a>
+            <a class="download-card" href="https://github.com/computersniper/glossX/tree/glossX-dev#from-source"><span class="platform-icon web">◌</span><div><small data-i18n="install.d2">Windows / Linux / macOS</small><strong data-i18n="install.d2t">Run from source with npm <b>→</b></strong></div></a>
+            <a class="download-card" href="https://github.com/computersniper/glossX/tree/glossX-dev/mobile"><span class="platform-icon npm">▯</span><div><small data-i18n="install.d3">iPad / iPhone / Android</small><strong data-i18n="install.d3t">Build the mobile app <b>→</b></strong></div></a>
+          </div><p class="install-note" data-i18n="install.note">Node 20.19+ · Python 3.11+ · runs 100% locally</p></div></section>
+      </main>
+      <footer class="footer container"><a class="brand" href="#top"><img src="/assets/glossx-logo.svg" alt="" /><span>GlossX</span></a><p data-i18n="footer.tag">The Gloss reader, with an agent at the desk.</p><div><a class="readme-link" href="https://github.com/computersniper/glossX/tree/glossX-dev#readme" target="_blank" rel="noreferrer" data-i18n="footer.readme">README</a><a href="https://computersniper.github.io/gloss-site/" data-i18n="footer.gloss">Gloss</a><a href="https://github.com/computersniper/glossX">GitHub</a></div></footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
